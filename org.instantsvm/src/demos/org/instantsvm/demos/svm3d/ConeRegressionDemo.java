@@ -13,7 +13,7 @@ import org.instantsvm.regression.RegressionSVM;
 import org.instantsvm.svm3d.utils.Conversion;
 import org.instantsvm.utils.LazySVM;
 
-public class SphereRegressionDemo extends Abstract3dDemo {
+public class ConeRegressionDemo extends Abstract3dDemo {
 	public static void main(String[] args) throws IOException {
 		RegressionInputs inputs = Conversion.toRegressionInputs( getInputs() );
 		Parameters params = getParams();

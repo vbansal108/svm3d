@@ -26,7 +26,7 @@ import org.instantsvm.svm3d.utils.Conversion;
 
 public abstract class Abstract3dDemo {
 	public static void openChart(Chart chart){
-		ChartLauncher.openChart( chart, "InstantSVM & Svm3D " );
+		ChartLauncher.openChart( chart, "Svm3D " );
 	}
 	
 	public static void openChart(Chart chart, Parameters params){
@@ -79,7 +79,7 @@ public abstract class Abstract3dDemo {
 	/****************** 3d OBJECTS GENERATION ********************/
 	
 	public static Scatter loadScatter(Chart chart, Coord3d[] coords) {
-		Scatter scatter = new Scatter(coords, Color.BLACK, 4);
+		Scatter scatter = new Scatter(coords, Color.BLACK, 5);
 		chart.getScene().getGraph().add(scatter);
 		return scatter;
 	}

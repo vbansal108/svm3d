@@ -1,6 +1,8 @@
 package org.instantsvm.demos.svm3d;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import libsvm.svm_parameter;
 
@@ -15,7 +17,7 @@ import org.instantsvm.regression.RegressionParameters;
 import org.instantsvm.regression.RegressionSVM;
 import org.instantsvm.svm3d.utils.Conversion;
 
-public class GeneratedRingsRegressionDemo extends Abstract3dDemo {
+public class RingsRegressionDemo extends Abstract3dDemo {
 	public static void main(String[] args) throws IOException {
 		RegressionInputs inputs = Conversion.toRegressionInputs( getInputs() );
 		Parameters params = getParams();
@@ -36,8 +38,26 @@ public class GeneratedRingsRegressionDemo extends Abstract3dDemo {
 	public static Coord3d[] getInputs() {
 		double[] radius = {0.2,0.5, 0.8};
 		double[] height = {0,0.5, -0.5};
-		int n[] = {10,10,10};
-		return Conversion.toArray(GenRadial.generate(radius, height, n));
+		int n[] = {12,12,12};
+		return Conversion.toArray( generate(radius, height, n) );
+	}
+	
+	public static List<Coord3d> generate(double[] radius, double height[], int[] n){
+		List<Coord3d> rings = new ArrayList<Coord3d>();
+		for (int i = 0; i < n.length; i++) {
+			double r = radius[i];
+			double h = height[i];
+			double t = 0;
+			double step = 2*Math.PI / n[i];
+			while(t<(2*Math.PI)){
+				Coord3d c = new Coord3d(t,0,r).cartesian();
+				c.z += h;
+	        	rings.add( c );
+	        	
+	        	t += step;
+	        }
+		}
+		return rings;
 	}
 
 	public static Parameters getParams() {
@@ -58,4 +78,6 @@ public class GeneratedRingsRegressionDemo extends Abstract3dDemo {
 		}
 		return params;
 	}
+	
+	
 }

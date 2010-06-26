@@ -4,6 +4,7 @@
 	<classpathentry kind="src" path="src/instantsvm"/>
 	<classpathentry kind="src" path="src/svm3d"/>
 	<classpathentry kind="src" path="src/libsvm"/>
+	<classpathentry kind="src" path="src/private"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/net.masagroup.jzy3d-0.7.1.jar"/>
 	<classpathentry kind="lib" path="lib/gluegen-rt.jar"/>
